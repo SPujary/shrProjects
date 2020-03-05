@@ -42,14 +42,14 @@ const MyTextInput = ({ label, ...props }) => {
   };
   
   const validationSchema = Yup.object({
-    firstName: Yup.string()
+    username: Yup.string()
         .max(10, 'Must be 10 characters or less')
         .matches(/^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$/,'Only contain letters')
         .required('Required'),
     });
 function Login(props) {
     const classes = useStyles();
-    // const history =useHistory();
+     const history =useHistory();
     return (
         <Grid container  justify="center" style={{backgroundColor:'#f5f5f5',height:'100vh'}} >
             <Grid item className={classes.root}>
@@ -58,7 +58,7 @@ function Login(props) {
         <Typography variant="h5" component="h1" align="center" style={{marginBottom:'30px'}}>
             Login
         </Typography>
-        <Formik initialValues={{userName:'',password:''}} 
+        <Formik initialValues={{username:'',password:''}} 
               validationSchema={validationSchema}
             onSubmit={(data,{setSubmitting})=>{
                 setSubmitting(true);

@@ -49,9 +49,14 @@ function Counters (props) {
     }
 
     const handleDelete = (counterId) => {
-             console.log("The handle delete clicked",counterId);
-            const c = counter.filter(c => c.id !== counterId);
-            setCounter(c);
+            let count=1;
+            console.log("The handle delete clicked",counterId);
+            const del = counter.filter(c => c.id !== counterId);
+            let d=del.map(e => {
+              e ={...e,id:count++}
+              return e;
+            });
+            setCounter(d);
     }
     
     const incrementQty = (cid) => {
@@ -75,7 +80,6 @@ function Counters (props) {
     }
         const classes = useStyles();
         console.log(counter)
-        const count=1;
         return ( 
             <React.Fragment>
       <Layout />
