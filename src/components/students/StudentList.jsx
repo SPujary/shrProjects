@@ -47,7 +47,6 @@ const useStyles = makeStyles({
 
 function StudentList(props) {
   const classes = useStyles();
-  let counter= 1;
   //const [student,setStudent]=useState([{id:1,firstName:'Shrinath',lastName:'Poojary'}]);
   const [student, dispatch] = useReducer(studentReducer, [],()=>{
     const localData = localStorage.getItem('student');
@@ -108,7 +107,7 @@ useEffect(()=>{
                 {student.map(row =>
                   <TableRow key={row.id}>
                     <TableCell component="th" scope="row">
-                      {counter++}
+                      {row.id}
                     </TableCell>
                     <TableCell align="right">{row.firstName}</TableCell>
                     <TableCell align="right">{row.lastName}</TableCell>

@@ -10,13 +10,14 @@ export const studentReducer=(state,action) => {
             }];
 
         case 'DEL_STUD':
-            // let del=state.filter(state => state.id !== action.studId);
-            // let s=del.map(e => {
-            //             e.id ={...e,id:}
-            //         }
-            //         return e;
-            //         );
-            return state.filter(state => state.id !== action.studId);
+            let count=1;
+            let del=state.filter(state => state.id !== action.studId);
+            let d=del.map(e => {
+                        e ={...e,id:count++}
+                    return e;
+                    });
+             return d;
+            // return state.filter(state => state.id !== action.studId);
 
         case 'EDIT_STUD':
             console.log("Reducer: ",action);
