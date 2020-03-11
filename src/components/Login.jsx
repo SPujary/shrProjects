@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Auth from './Authorization';
 import {Formik, Form,  useField } from 'formik';
 import {Grid, Card, CardContent, Typography, TextField, Button} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
@@ -64,8 +65,13 @@ function Login(props) {
                 setSubmitting(true);
                 if (data.username==='admin' && data.password==='admin')
                 {
+                    Auth.signin();
                     history.push({pathname:'/students'});
                     setSubmitting(false);
+                }
+                else
+                {
+                  alert("Invalid Username or Password.")
                 }
                 
             }}>
