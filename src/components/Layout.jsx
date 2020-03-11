@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory, Link} from 'react-router-dom';
 
+import Auth from './Authorization';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -37,7 +39,7 @@ function Sidebar(props) {
         }
       }));
       const classes = useStyles();
-      // const history = useHistory();
+      const history = useHistory();
 
       // console.log(props.location);
       
@@ -45,6 +47,10 @@ function Sidebar(props) {
       // {
       //   history.push( '/');
       // }
+      const handleSignOut = (e) =>{
+        history.push('/');
+        Auth.signout();
+      }
       return (
         <div className={classes.root}>
           <Divider />
@@ -66,12 +72,12 @@ function Sidebar(props) {
           <Divider />
 
           <List>
-            <Link to="/" className={classes.link}>
-          <ListItem button >
+            {/* <Link to="/" className={classes.link}> */}
+          <ListItem button onClick={handleSignOut}>
               <ListItemIcon><PowerSettingsNewIcon/> </ListItemIcon>
               <ListItemText primary="Sign Out"/>
             </ListItem>
-            </Link>
+           {/* </List> </Link> */}
             {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
