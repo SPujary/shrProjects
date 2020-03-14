@@ -67,6 +67,12 @@ function Sidebar(props) {
               <ListItemText primary="Shopping Cart"/>
             </ListItem>
             </Link>
+            <Link to="/LineGraph" className={classes.link}>
+            <ListItem button>
+              <ListItemIcon><ShoppingCartIcon/> </ListItemIcon>
+              <ListItemText primary="Graph"/>
+            </ListItem>
+            </Link>
           </List>
 
           <Divider />

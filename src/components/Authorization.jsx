@@ -1,6 +1,6 @@
 
 const Auth = {
-    isAuthenticated: false,
+    isAuthenticated: true,
     signin() {
         this.isAuthenticated = true;
     },

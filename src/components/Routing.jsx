@@ -7,6 +7,7 @@ import AddStudent from './students/AddStudent';
 import EditStudent from './students/EditStudent';
 import counters from './shopping-cart/counters';
 import TimePicker from './time-comp/TimePicker';
+import LineGraph from './graph/LineGraph';
 
 function Routing(props) {
 
@@ -18,6 +19,7 @@ function Routing(props) {
             <PrivateRoute path="/EditStudent" component={EditStudent} />
             <PrivateRoute path="/ShoppingCart" component={counters} />
             <PrivateRoute path="/TimePicker" component={TimePicker} />
+            <PrivateRoute path="/LineGraph" component={LineGraph} />
         </Switch>
     );
 }
